@@ -1,0 +1,429 @@
+,short_name,long_name,age,club,overall,potential,defending,physic
+1,M. de Ligt,Matthijs de Ligt,19,Juventus,85,93,83,84
+2,K. Koulibaly,Kalidou Koulibaly,28,Napoli,89,91,89,87
+3,V. van Dijk,Virgil van Dijk,27,Liverpool,90,91,90,86
+4,F. de Jong,Frenkie de Jong,22,FC Barcelona,85,91,76,76
+5,S. Milinković-Savić,Sergej Milinković-Savić,24,Lazio,85,90,77,84
+6,Marquinhos,Marcos  Aoás Corrêa,25,Paris Saint-Germain,86,90,86,77
+7,N. Kanté,N'Golo Kanté,28,Chelsea,89,90,87,83
+8,N. Süle,Niklas Süle,23,FC Bayern München,85,90,86,82
+9,R. Varane,Raphaël Varane,26,Real Madrid,85,90,85,80
+10,Rodri,Rodrigo Hernández Cascante,23,Manchester City,85,90,82,80
+11,M. Škriniar,Milan Škriniar,24,Inter,86,90,87,82
+12,A. Laporte,Aymeric  Laporte,25,Manchester City,87,90,88,82
+13,A. Romagnoli,Alessio Romagnoli,24,Milan,83,89,85,79
+14,J. Giménez,José María Giménez de Vargas,24,Atlético Madrid,85,89,86,82
+15,Fabinho,Fábio Henrique Tavares,25,Liverpool,85,89,85,83
+16,L. Hernández,Lucas Hernández,23,FC Bayern München,84,89,83,82
+17,Sergio Busquets,Sergio Busquets i Burgos,30,FC Barcelona,89,89,85,80
+18,S. Umtiti,Samuel Umtiti,25,FC Barcelona,86,89,86,82
+19,Casemiro,Carlos Henrique Venancio Casimiro,27,Real Madrid,87,89,85,89
+20,C. Lenglet,Clément Lenglet,24,FC Barcelona,85,89,86,80
+21,G. Chiellini,Giorgio Chiellini,34,Juventus,89,89,90,82
+22,Sergio Ramos,Sergio Ramos García,33,Real Madrid,89,89,87,85
+23,A. Robertson,Andrew Robertson,25,Liverpool,85,89,80,75
+24,J. Kimmich,Joshua Kimmich,24,FC Bayern München,86,88,79,78
+25,L. Goretzka,Leon Goretzka,24,FC Bayern München,84,88,75,79
+26,J. Tah,Jonathan Tah,23,Bayer 04 Leverkusen,83,88,83,81
+27,M. Akanji,Manuel Obafemi Akanji,23,Borussia Dortmund,83,88,83,80
+28,D. Godín,Diego Godín,33,Inter,88,88,89,83
+29,C. Tolisso,Corentin Tolisso,24,FC Bayern München,83,88,76,79
+30,Piqué,Gerard Piqué Bernabéu,32,FC Barcelona,88,88,88,80
+31,I. Konaté,Ibrahima Konaté,20,RB Leipzig,79,88,80,78
+32,D. Upamecano,Dayotchanculle Upamecano,20,RB Leipzig,77,88,75,80
+33,J. Gomez,Joe Gomez,22,Liverpool,80,88,79,76
+34,Éder Militão,Éder Gabriel Militão,21,Real Madrid,81,88,81,81
+35,M. Hummels,Mats  Hummels,30,Borussia Dortmund,87,87,89,76
+36,S. Berge,Sander Berge,21,KRC Genk,79,87,76,85
+37,Ferro,Francisco Reis Ferreira,22,SL Benfica,78,87,80,76
+38,T. Alderweireld,Toby Alderweireld,30,Tottenham Hotspur,87,87,88,79
+39,P. Kimpembe,Presnel Kimpembe,23,Paris Saint-Germain,82,87,81,83
+40,L. Torreira,Lucas Torreira Di Pascua,23,Arsenal,82,87,81,75
+41,D. Sánchez,Davinson Sánchez,23,Tottenham Hotspur,83,87,83,81
+42,J. Vertonghen,Jan Vertonghen,32,Tottenham Hotspur,87,87,87,79
+43,A. Rabiot,Adrien Rabiot,24,Juventus,83,87,77,80
+44,Thiago Silva,Thiago Emiliano da Silva,34,Paris Saint-Germain,87,87,87,78
+45,V. Lindelöf,Victor Nilsson Lindelöf,24,Manchester United,81,87,82,78
+46,J. Stones,John Stones,25,Manchester City,83,87,84,77
+47,Mario Hermoso,Mario Hermoso Canseco,24,Atlético Madrid,80,87,79,77
+48,Nélson Semedo,Nélson Cabral Semedo,25,FC Barcelona,82,87,77,75
+49,D. Rice,Declan Rice,20,West Ham United,78,87,77,77
+50,Fernandinho,Fernando Luiz Rosa,34,Manchester City,87,87,84,79
+51,Alex Telles,Alex Nicolao Telles,26,FC Porto,84,86,80,76
+52,Rúben Dias,Rúben Alves Dias,22,SL Benfica,80,86,81,83
+53,D. Alaba,David Olatukunbo Alaba,27,FC Bayern München,85,86,80,76
+54,K. Manolas,Kostas Manolas,28,Napoli,85,86,86,81
+55,F. Kessié,Franck Yannick Kessié,22,Milan,79,86,78,88
+56,W. McKennie,Weston McKennie,20,FC Schalke 04,76,86,76,83
+57,L. Digne,Lucas Digne,25,Everton,83,86,80,76
+58,D. Zakaria,Denis Lemi Zakaria Lako Lado,22,Borussia Mönchengladbach,78,86,79,82
+59,Carvajal,Daniel Carvajal Ramos,27,Real Madrid,85,86,82,80
+60,L. Bonucci,Leonardo Bonucci,32,Juventus,86,86,87,79
+61,D. Samassékou,Diadie Samassékou,23,TSG 1899 Hoffenheim,79,86,77,77
+62,I. Diop,Issa Diop,22,West Ham United,78,86,79,79
+63,E. Can,Emre Can,25,Juventus,81,86,81,84
+64,G. Mancini,Gianluca Mancini,23,Roma,76,86,77,75
+65,D. Zagadou,Dan-Axel Zagadou,20,Borussia Dortmund,79,86,80,80
+66,J. Andersen,Joachim Andersen,23,Olympique Lyonnais,78,86,78,79
+67,T. Kehrer,Thilo Kehrer,22,Paris Saint-Germain,79,86,78,76
+68,F. Mendy,Ferland Mendy,24,Real Madrid,80,86,75,81
+69,T. Souček,Tomáš Souček,24,SK Slavia Praha,79,85,79,82
+70,William Carvalho,William Silva de Carvalho,27,Real Betis,83,85,79,85
+71,L. Martínez,Lisandro Martínez,21,Ajax,77,85,77,76
+72,A. Witsel,Axel  Witsel,30,Borussia Dortmund,85,85,83,81
+73,T. Partey,Thomas Partey,26,Atlético Madrid,82,85,79,84
+74,D. Djené,Djené Dakonam Ortega,27,Getafe CF,83,85,83,79
+75,Allan,Allan Marques Loureiro,28,Napoli,85,85,85,84
+76,Alex Sandro,Alex Sandro Lobo Silva,28,Juventus,85,85,82,82
+77,Marcelo,Marcelo Vieira da Silva Júnior,31,Real Madrid,85,85,77,79
+78,B. Matuidi,Blaise Matuidi,32,Juventus,85,85,83,81
+79,A. Diallo,Abdou Diallo,23,Paris Saint-Germain,79,85,78,76
+80,T. Bakayoko,Tiémoué Bakayoko,24,Chelsea,80,85,79,85
+81,N. Mukiele,Nordi Mukiele,21,RB Leipzig,77,85,76,76
+82,B. Mendy,Benjamin Mendy,24,Manchester City,80,85,77,77
+83,L. Klostermann,Lukas Klostermann,23,RB Leipzig,79,85,79,75
+84,J. Denayer,Jason Denayer,24,Olympique Lyonnais,79,85,79,78
+85,F. Benković,Filip Benković,21,Leicester City,76,85,75,82
+86,B. Chilwell,Ben Chilwell,22,Leicester City,79,85,76,75
+87,M. Demiral,Merih Demiral,21,Juventus,74,85,75,75
+88,Junior Firpo,Héctor Junior Firpo Adamés,22,FC Barcelona,79,85,75,76
+89,G. Dzhikiya,Georgiy Dzhikiya,25,Spartak Moscow,78,84,78,81
+90,Paulinho,José Paulo Bezzera Maciel Júnior,30,Guangzhou Evergrande Taobao FC,84,84,78,85
+91,N. Tagliafico,Nicolás Alejandro Tagliafico,26,Ajax,82,84,80,81
+92,Pepe,Képler Laveran Lima Ferreira,36,FC Porto,84,84,85,85
+93,N. Elvedi,Nico Elvedi,22,Borussia Mönchengladbach,78,84,78,75
+94,Felipe,Felipe Augusto de Almeida Monteiro,30,Atlético Madrid,84,84,84,87
+95,G. Kondogbia,Geoffrey Kondogbia,26,Valencia CF,81,84,78,88
+96,E. Álvarez,Edson Álvarez,21,Ajax,76,84,75,75
+97,J. Boateng,Jérôme Boateng,30,FC Bayern München,84,84,84,82
+98,G. Wijnaldum,Georginio Wijnaldum,28,Liverpool,84,84,76,78
+99,Javi Martínez,Javier Martínez Aginaga,30,FC Bayern München,84,84,86,83
+100,Sokratis,Sokratis Papastathopoulos,31,Arsenal,84,84,84,83
+101,O. Yokuşlu,Okay Yokuşlu,25,RC Celta,78,84,75,84
+102,N. Stark,Niklas Stark,24,Hertha BSC,79,84,80,75
+103,Calero,Fernando Calero Villa,23,RCD Espanyol,78,84,79,76
+104,A. Doucouré,Abdoulaye Doucouré,26,Watford,81,84,79,82
+105,Azpilicueta,César Azpilicueta Tanco,29,Chelsea,84,84,85,76
+106,M. Sarr,Malang Sarr,20,OGC Nice,76,84,76,76
+107,J. Matip,Joël Andre Job Matip,27,Liverpool,82,84,83,76
+108,K. Walker,Kyle Walker,29,Manchester City,84,84,81,81
+109,A. Vidal,Arturo Vidal,32,FC Barcelona,84,84,85,86
+110,N. Nández,Nahitan Nández,23,Cagliari,77,84,76,83
+111,L. Dendoncker,Leander Dendoncker,24,Wolverhampton Wanderers,78,84,78,83
+112,A. Rüdiger,Antonio Rüdiger,26,Chelsea,82,84,82,78
+113,L. Shaw,Luke Shaw,23,Manchester United,81,84,80,78
+114,K. Zouma,Kurt Happy Zouma,24,Chelsea,80,84,78,83
+115,N. Aké,Nathan Aké,24,Bournemouth,80,84,81,77
+116,W. Ndidi,Onyinye Wilfred Ndidi,22,Leicester City,81,84,83,82
+117,J. Gbamin,Jean-Philippe Gbamin,23,Everton,79,84,78,83
+118,Danilo Pereira,Danilo Luís Hélio Pereira,27,FC Porto,83,83,82,85
+119,V. Kompany,Vincent Kompany,33,RSC Anderlecht,83,83,84,79
+120,R. Nainggolan,Radja Nainggolan,31,Cagliari,83,83,83,82
+121,M. Ginter,Matthias Ginter,25,Borussia Mönchengladbach,81,83,82,77
+122,E. Garay,Ezequiel Marcelo Garay,32,Valencia CF,83,83,82,81
+123,Gabriel Paulista,Gabriel Armando de Abreu,28,Valencia CF,82,83,83,81
+124,J. Roussillon,Jérôme Roussillon,26,VfL Wolfsburg,82,83,78,78
+125,W. Orban,Willi Orban,26,RB Leipzig,81,83,82,80
+126,David Luiz,David Luiz Moreira Marinho,32,Arsenal,83,83,82,77
+127,A. Franco,Alan Javier Franco,22,Independiente,76,83,76,77
+128,F. Acerbi,Francesco Acerbi,31,Lazio,83,83,86,82
+129,T. Delaney,Thomas Delaney,27,Borussia Dortmund,82,83,83,82
+130,Josué Chiamulera,Josué Durval Chiamulera Vaz,27,Grêmio,83,83,85,77
+131,Rúben Vezo,Rúben Miguel Nunes Vezo,25,Levante UD,78,83,79,75
+132,L. Tousart,Lucas Tousart,22,Olympique Lyonnais,78,83,79,83
+133,I. Gueye,Idrissa Gana Gueye,29,Paris Saint-Germain,83,83,85,78
+134,W. Anton,Waldemar Anton,22,Hannover 96,76,83,77,77
+135,S. Khedira,Sami Khedira,32,Juventus,83,83,80,80
+136,M. Keane,Michael Keane,26,Everton,80,83,80,79
+137,N. Otamendi,Nicolás Hernán Otamendi,31,Manchester City,83,83,83,78
+138,J. Henderson,Jordan Brian Henderson,29,Liverpool,83,83,78,80
+139,E. Dier,Eric Dier,25,Tottenham Hotspur,79,83,80,84
+140,A. Izzo,Armando Izzo,27,Torino,81,83,83,75
+141,N. Milenković,Nikola Milenković,21,Fiorentina,76,83,75,81
+142,E. Bailly,Eric Bailly,25,Manchester United,80,83,79,80
+143,E. Pulgar,Erick Pulgar,25,Fiorentina,78,83,76,78
+144,J. Lerma,Jefferson Andrés Lerma Solís,24,Bournemouth,79,83,78,80
+145,Nacho Fernández,José Ignacio Fernández Iglesias,29,Real Madrid,82,83,81,79
+146,Y. Mina,Yerry Mina,24,Everton,78,83,78,80
+147,H. Choudhury,Hamza Choudhury,21,Leicester City,74,83,76,75
+148,H. Maguire,Harry Maguire,26,Manchester United,82,83,81,84
+149,Mário Fernandes,Mário Figueira Fernandes,28,PFC CSKA Moscow,82,82,81,79
+150,V. Ćorluka,Vedran Ćorluka,33,Lokomotiv Moscow,82,82,81,82
+151,S. Coates,Sebastián Coates Nión,28,Sporting CP,82,82,83,85
+152,S. Kjær,Simon Thorup Kjær,30,Sevilla FC,82,82,81,78
+153,D. Dumfries,Denzel Dumfries,23,PSV,78,82,76,87
+154,Gabriel,Gabriel Appelt Pires,25,SL Benfica,80,82,76,83
+155,Bruno Viana,Bruno Viana Willemen Da Silva,24,SC Braga,78,82,79,76
+156,H. Herrera,Héctor Miguel Herrera López,29,Atlético Madrid,82,82,78,81
+157,D. De Rossi,Daniele De Rossi,35,Boca Juniors,82,82,85,77
+158,M. Hinteregger,Martin Hinteregger,26,Eintracht Frankfurt,80,82,81,80
+159,Sergi Gómez,Sergi Gómez Solà,27,Sevilla FC,80,82,81,75
+160,J. Murillo,Jeison Fabián Murillo Cerón,27,Sampdoria,79,82,79,80
+161,I. Šunjić,Ivan Šunjić,22,Birmingham City,75,82,77,79
+162,Ander Herrera,Ander Herrera Agüera,29,Paris Saint-Germain,82,82,82,77
+163,F. Schär,Fabian Schär,27,Newcastle United,79,82,80,75
+164,J. Brooks,John Anthony Brooks,26,VfL Wolfsburg,79,82,80,75
+165,I. Amadou,Ibrahim Amadou,26,Norwich City,78,82,76,81
+166,G. Maripán,Guillermo Alfonso Maripán Loaysa,25,Deportivo Alavés,78,82,78,79
+167,L. Cabrera,Leandro Cabrera,27,Getafe CF,79,82,79,80
+168,K. Rekik,Karim Rekik,24,Hertha BSC,78,82,78,77
+169,G. Escalante,Gonzalo Escalante,26,SD Eibar,77,82,75,76
+170,B. Engels,Björn Engels,24,Aston Villa,76,82,75,76
+171,T. Meunier,Thomas Meunier,27,Paris Saint-Germain,82,82,78,84
+172,A. Djiku,Alexander Djiku,24,RC Strasbourg Alsace,77,82,76,80
+173,S. Ascacíbar,Santiago Lionel Ascacíbar,22,VfB Stuttgart,76,82,77,76
+174,K. Tete,Kenny Tete,23,Olympique Lyonnais,77,82,78,77
+175,M. Diakhaby,Mouctar Diakhaby,22,Valencia CF,77,82,76,77
+176,A. Kolarov,Aleksandar Kolarov,33,Roma,82,82,82,79
+177,D. Ćaleta-Car,Duje Ćaleta-Car,22,Olympique de Marseille,76,82,75,79
+178,J. Tarkowski,James Tarkowski,26,Burnley,79,82,79,78
+179,S. Kolašinac,Sead Kolašinac,26,Arsenal,79,82,75,87
+180,O. Colley,Omar Colley,26,Sampdoria,77,82,75,83
+181,J. Lascelles,Jamaal Lascelles,25,Newcastle United,78,82,78,80
+182,L. Milivojević,Luka Milivojević,28,Crystal Palace,81,82,78,84
+183,F. Guilbert,Frédéric Guilbert,24,Aston Villa,76,82,76,75
+184,Juiano Mestres,Juan Everton Mestres de Mesquita,35,Cruzeiro,82,82,82,80
+185,F. Balbuena,Fabián Balbuena,27,West Ham United,79,82,80,79
+186,S. Gigot,Samuel Gigot,25,Spartak Moscow,76,81,76,79
+187,M. Dembélé,Moussa Sidi Yaya Dembélé,31,Guangzhou R&F FC,81,81,77,80
+188,M. Acuña,Marcos Javier Acuña,27,Sporting CP,81,81,76,84
+189,André Almeida,André Gomes Magalhaes de Almeida,28,SL Benfica,81,81,82,82
+190,Diego Carlos,Diego Carlos Santos Silva,26,Sevilla FC,79,81,78,80
+191,J. Mathieu,Jérémy Mathieu,35,Sporting CP,81,81,83,81
+192,Fernando,Fernando Francisco Reges,31,Sevilla FC,81,81,81,82
+193,E. Velázquez,Emiliano Velázquez,25,Rayo Vallecano,75,81,76,76
+194,Dani García,Daniel García Carrillo,29,Athletic Club de Bilbao,81,81,78,79
+195,Iñigo Martínez,Íñigo Martínez Berridi,28,Athletic Club de Bilbao,80,81,80,78
+196,Luiz Gustavo,Luiz Gustavo Dias,31,Olympique de Marseille,81,81,80,82
+197,Jardel,Jardel Nivaldo Vieira,33,SL Benfica,81,81,82,79
+198,R. Bensebaini,Ramy Bensebaini,24,Borussia Mönchengladbach,77,81,77,80
+199,C. Kramer,Christoph Kramer,28,Borussia Mönchengladbach,80,81,77,77
+200,Palhinha,João Maria Lobo Alves Palhinha Gonçalves,23,SC Braga,76,81,76,80
+201,P. Kadeřábek,Pavel Kadeřábek,27,TSG 1899 Hoffenheim,80,81,75,81
+202,L. Giannetti,Lautaro Giannetti,25,Vélez Sarsfield,74,81,75,77
+203,J. Guilavogui,Josuha Guilavogui,28,VfL Wolfsburg,80,81,83,79
+204,M. Halstenberg,Marcel Halstenberg,27,RB Leipzig,80,81,80,80
+205,José Fonte,José Miguel da Rocha Fonte,35,LOSC Lille,81,81,81,76
+206,S. Mustafi,Shkodran Mustafi,27,Arsenal,79,81,77,77
+207,K. Amian,Kelvin Amian,21,Toulouse Football Club,75,81,75,76
+208,E. Cabaco,Erick Cabaco,24,Levante UD,75,81,75,77
+209,M. Kempf,Marc-Oliver Kempf,24,VfB Stuttgart,75,81,75,77
+210,D. da Costa,Danny  Vieira da Costa,25,Eintracht Frankfurt,79,81,76,81
+211,N. Matić,Nemanja Matić,30,Manchester United,81,81,80,78
+212,M. Sissoko,Moussa Sissoko,29,Tottenham Hotspur,81,81,79,89
+213,A. Soumaoro,Adama Soumaoro,27,LOSC Lille,78,81,76,83
+214,S. Meïté,Soualiho Meïté,25,Torino,78,81,75,83
+215,Marcos Alonso,Marcos Alonso Mendoza,28,Chelsea,81,81,79,79
+216,H. Hateboer,Hans Hateboer,25,Atalanta,78,81,75,75
+217,M. Parolo,Marco Parolo,34,Lazio,81,81,79,79
+218,L. Piszczek,Łukasz Piszczek,34,Borussia Dortmund,81,81,82,78
+219,G. Pezzella,Germán Alejandro Pezzella,28,Fiorentina,79,81,80,76
+220,J. Milner,James Philip Milner,33,Liverpool,81,81,77,78
+221,C. Salcedo,Carlos Salcedo,25,Tigres U.A.N.L.,77,81,77,78
+222,W. Boly,Willy Boly,28,Wolverhampton Wanderers,79,81,78,82
+223,T. Stepanenko,Taras Stepanenko,29,Shakhtar Donetsk,80,80,78,80
+224,Ismaily,Ismaily Gonçalves dos S.,29,Shakhtar Donetsk,80,80,75,75
+225,J. Mascherano,Javier Alejandro Mascherano,35,Hebei China Fortune FC,80,80,79,75
+226,J. Veltman,Joël Veltman,27,Ajax,79,80,79,78
+227,K. Strootman,Kevin Strootman,29,Olympique de Marseille,80,80,77,80
+228,Pedro Henrique,Pedro Henrique Pereira da Silva,26,Vitória Guimarães,77,80,77,82
+229,Sidnei,Sidnei Rechel da Silva Júnior,29,Real Betis,80,80,78,82
+230,K. Glik,Kamil Glik,31,AS Monaco,80,80,79,82
+231,S. Sané,Salif Sané,28,FC Schalke 04,80,80,80,81
+232,K. Vogt,Kevin Vogt,27,TSG 1899 Hoffenheim,80,80,80,79
+233,F. Coquelin,Francis Coquelin,28,Valencia CF,80,80,78,77
+234,Y. M'Vila,Yann Gérard M'Vila,29,AS Saint-Étienne,80,80,75,78
+235,D. Wass,Daniel Wass,30,Valencia CF,80,80,76,75
+236,F. Fazio,Federico Julián Fazio,32,Roma,80,80,82,81
+237,M. Sakho,Mamadou Sakho,29,Crystal Palace,79,80,78,83
+238,T. Baumgartl,Timo Baumgartl,23,PSV,75,80,76,75
+239,L. Bender,Lars Bender,30,Bayer 04 Leverkusen,80,80,83,77
+240,D. Vida,Domagoj Vida,30,Beşiktaş JK,80,80,82,79
+241,F. Lejeune,Florian Lejeune,28,Newcastle United,78,80,78,79
+242,S. Arias,Santiago Arias Naranjo,27,Atlético Madrid,79,80,76,77
+243,D. Bronn,Dylan Bronn,24,KAA Gent,75,80,75,76
+244,S. Vrsaljko,Šime Vrsaljko,27,Atlético Madrid,80,80,79,77
+245,S. Deli,Simon Deli,27,Club Brugge KV,78,80,78,79
+246,M. Ngadeu,Michael Ngadeu,28,KAA Gent,78,80,78,83
+247,B. Mechele,Brandon Mechele,26,Club Brugge KV,77,80,81,75
+248,I. Marcone,Iván Marcone,29,Boca Juniors,80,80,75,83
+249,Laguardia,Víctor Laguardia Cisneros,29,Deportivo Alavés,79,80,80,79
+250,D. Rose,Danny Rose,28,Tottenham Hotspur,80,80,80,75
+251,K. Ayhan,Kaan Ayhan,24,Fortuna Düsseldorf,77,80,77,75
+252,S. Bender,Sven Bender,30,Bayer 04 Leverkusen,80,80,82,77
+253,L. Perrin,Loïc Perrin,33,AS Saint-Étienne,80,80,81,76
+254,E. Capoue,Etienne Capoue,30,Watford,80,80,78,77
+255,S. Nzonzi,Steven N'Kemboanza Mike Christopher Nzonzi,30,Galatasaray SK,80,80,79,86
+256,C. Smalling,Chris Smalling,29,Manchester United,80,80,79,81
+257,S. Aurier,Serge Aurier,26,Tottenham Hotspur,79,80,77,76
+258,Pedro Mendes,Pedro Filipe Teodósio Mendes,28,Montpellier HSC,78,80,80,79
+259,D. Lovren,Dejan Lovren,29,Liverpool,80,80,80,78
+260,P. Jones,Phil Jones,27,Manchester United,79,80,78,76
+261,G. Rodríguez,Guido Rodríguez,24,Club América,77,80,77,79
+262,S. Duffy,Shane Duffy,27,Brighton & Hove Albion,78,80,78,80
+263,L. Dunk,Lewis Dunk,27,Brighton & Hove Albion,78,80,78,77
+264,M. Nakamba,Marvelous Nakamba,25,Aston Villa,76,80,75,82
+265,Everton Andrão,Everton Jorge Andrade Zanon,35,Fluminense,80,80,78,77
+266,C. Luyindama,Christian  Luyindama Nekadio,25,Galatasaray SK,77,80,76,84
+267,S. Kverkvelia,Solomon Kverkvelia,27,Lokomotiv Moscow,76,79,78,81
+268,Marcano,Iván Marcano Sierra,32,FC Porto,79,79,79,75
+269,A. Samaris,Andreas Samaris,30,SL Benfica,79,79,79,84
+270,J. Hector,Jonas Hector,29,1. FC Köln,79,79,78,75
+271,D. Criscito,Domenico Criscito,32,Genoa,79,79,79,75
+272,R. Vormer,Ruud Vormer,31,Club Brugge KV,79,79,75,79
+273,Yuri Berchiche,Yuri Berchiche Izeta,29,Athletic Club de Bilbao,79,79,78,81
+274,N. Pallois,Nicolas Pallois,31,FC Nantes,79,79,79,84
+275,Otávio,Otávio Henrique Passos Santos,25,FC Girondins de Bordeaux,76,79,77,75
+276,Pablo Santos,Pablo Renan dos Santos,27,SC Braga,76,79,77,77
+277,Mario Gaspar,Mario Gaspar Pérez Martínez,28,Villarreal CF,79,79,79,76
+278,D. Kohr,Dominik Kohr,25,Eintracht Frankfurt,76,79,75,79
+279,Raúl,Raúl Michel Melo da Silva,29,SC Braga,79,79,79,83
+280,Melvin Parrela,Melvin Luan Parrela Porfírio,31,CSA - AL,79,79,80,83
+281,T. Kongolo,Terence Kongolo,25,Huddersfield Town,75,79,75,75
+282,W. Troost-Ekong,William Troost-Ekong,25,Udinese,75,79,76,77
+283,Rubén Alcaraz,Rubén Alcaraz Jiménez,28,Real Valladolid CF,79,79,80,82
+284,Bastos,Bartolomeu Jacinto Quissanga,27,Lazio,78,79,79,75
+285,Maicon,Maicon Pereira Roque,30,Al Nassr,79,79,79,83
+286,A. Briançon,Anthony Briançon,24,Nîmes Olympique,76,79,75,79
+287,E. Pérez,Enzo Pérez,33,River Plate,79,79,75,78
+288,Dante,Dante Bonfim da Costa Santos,35,OGC Nice,79,79,80,76
+289,J. Vestergaard,Jannik Vestergaard,26,Southampton,78,79,80,77
+290,N. Araújo,Néstor Alejandro Araújo Razo,27,RC Celta,76,79,76,77
+291,R. Khedira,Rani Khedira,25,FC Augsburg,76,79,76,77
+292,Rodrigo Ely,Rodrigo Ely,25,Deportivo Alavés,75,79,75,76
+293,N. Maksimović,Nikola Maksimović,27,Napoli,78,79,80,78
+294,D. Suárez,Damián Nicolás Suárez Suárez,31,Getafe CF,79,79,78,76
+295,David López,David López Silva,29,RCD Espanyol,78,79,78,78
+296,Antônio Chiamuloira,A. Benjamin Chiamuloira Paes,31,Internacional,79,79,79,78
+297,Víctor Ruiz,Víctor Ruíz Torre,30,Beşiktaş JK,79,79,80,76
+298,G. Shoji,昌子 源,26,Toulouse Football Club,75,79,75,77
+299,C. Piccini,Cristiano Piccini,26,Valencia CF,77,79,76,76
+300,C. Taylor,Charlie Taylor,25,Burnley,76,79,75,76
+301,S. Lulić,Senad Lulić,33,Lazio,79,79,75,76
+302,V. Wanyama,Victor Wanyama,28,Tottenham Hotspur,78,79,79,82
+303,M. Škrtel,Martin Škrtel,34,Atalanta,79,79,78,82
+304,J. Evans,Jonny Evans,31,Leicester City,79,79,80,75
+305,Danilo,Danilo Luiz da Silva,27,Juventus,79,79,78,76
+306,C. Kabasele,Christian Kabasele,28,Watford,78,79,78,77
+307,S. Aziz,Serdar Aziz,28,Fenerbahçe SK,77,79,76,78
+308,G. Krychowiak,Grzegorz Krychowiak,29,Lokomotiv Moscow,78,78,75,80
+309,A. Granqvist,Andreas Granqvist,34,Helsingborgs IF,78,78,80,76
+310,L. Fejsa,Ljubomir Fejsa,30,SL Benfica,78,78,81,80
+311,S. Sturaro,Stefano Sturaro,26,Genoa,75,78,76,78
+312,Mikel San José,Mikel San José Domínguez,30,Athletic Club de Bilbao,78,78,79,80
+313,C. Zapata,Cristian Eduardo Zapata Valencia,32,Genoa,78,78,82,76
+314,R. Battaglia,Rodrigo Andrés Battaglia,27,Sporting CP,78,78,80,80
+315,R. Funes Mori,José Ramiro Funes Mori,28,Villarreal CF,77,78,76,76
+316,B. Stambouli,Benjamin Stambouli,28,FC Schalke 04,78,78,79,76
+317,Iborra,Vicente Iborra de la Fuente,31,Villarreal CF,78,78,77,79
+318,S. Rode,Sebastian Rode,28,Eintracht Frankfurt,78,78,76,77
+319,B. André,Benjamin André,28,LOSC Lille,78,78,77,82
+320,Souza,Josef de Souza Dias,30,Al Ahli,78,78,78,84
+321,G. Medel,Gary Alexis Medel Soto,31,Beşiktaş JK,78,78,77,84
+322,D. Abraham,David Ángel Abraham,32,Eintracht Frankfurt,78,78,78,77
+323,N. Domínguez,Nery Domínguez,29,Racing Club,78,78,76,77
+324,M. de Roon,Marten de Roon,28,Atalanta,78,78,79,79
+325,D. Da Silva,Damien Da Silva,31,Stade Rennais FC,78,78,78,76
+326,J. Gouweleeuw,Jeffrey Gouweleeuw,27,FC Augsburg,78,78,80,75
+327,N. Vukčević,Nikola Vukčević,27,Levante UD,75,78,75,77
+328,Bruno,Bruno González Cabrera,29,Getafe CF,77,78,77,79
+329,Oriol Romeu,Oriol Romeu Vidal,27,Southampton,76,78,77,77
+330,C. Izquierdoz,Carlos Roberto Izquierdoz,30,Boca Juniors,78,78,78,81
+331,Sidney Pessinho,Sidney Adrián Pessoa Vidigal,27,Internacional,78,78,76,81
+332,Z. Feddal,Zouhair Feddal,29,Real Betis,78,78,78,75
+333,J. Tomkins,James Tomkins,30,Crystal Palace,78,78,80,75
+334,J. Baumgartlinger,Julian Baumgartlinger,31,Bayer 04 Leverkusen,78,78,78,81
+335,A. Donatti,Alejandro Donatti,32,Racing Club,78,78,78,79
+336,Rafael,Rafael Pereira da Silva,28,Olympique Lyonnais,78,78,75,78
+337,Pablo,Pablo Nascimento Castro,28,FC Girondins de Bordeaux,77,78,79,77
+338,M. Rojo,Faustino Marcos Alberto Rojo,29,Manchester United,78,78,76,76
+339,J. Pinola,Javier Horacio Pinola,36,River Plate,78,78,77,77
+340,Álvaro,Álvaro González Soberón,29,Olympique de Marseille,78,78,77,78
+341,H. Sakai,酒井 宏樹,29,Olympique de Marseille,78,78,76,79
+342,B. Mee,Ben Mee,29,Burnley,78,78,79,80
+343,Marcelo,Marcelo Antônio Guedes Filho,32,Olympique Lyonnais,78,78,77,87
+344,Manu García,Manuel Alejandro García Sánchez,33,Deportivo Alavés,78,78,77,77
+345,P. Diop,Papa Kouly Diop,33,SD Eibar,78,78,78,85
+346,S. Cook,Steve Cook,28,Bournemouth,78,78,78,75
+347,J. Holebas,Jose Holebas,35,Watford,78,78,76,76
+348,G. Pizarro,Guido Pizarro,29,Tigres U.A.N.L.,78,78,76,84
+349,P. Wernbloom,Pontus Wernbloom,33,PAOK,77,77,77,81
+350,Varela,Fernando Lopes dos Santos Varela,31,PAOK,77,77,76,82
+351,A. Wakaso,Alhassan Wakaso,27,Vitória Guimarães,76,77,77,83
+352,S. De Maio,Sebastian De Maio,32,Udinese,77,77,79,79
+353,T. Strobl,Tobias Strobl,29,Borussia Mönchengladbach,77,77,79,77
+354,Javi García,Francisco Javier  García Fernández,32,Real Betis,77,77,76,82
+355,Y. Gómez Andrade,Yeimar Pastor Gómez Andrade,27,Unión de Santa Fe,76,77,76,85
+356,R. Civelli,Renato Civelli,35,Club Atlético Banfield,77,77,76,84
+357,Jemerson,Jemerson de Jesus Nascimento,26,AS Monaco,75,77,76,75
+358,E. Bičakčić,Ermin Bičakčić,29,TSG 1899 Hoffenheim,77,77,78,78
+359,L. Magallán,Lisandro Magallán,25,Ajax,75,77,75,79
+360,N. Subotić,Neven Subotić,30,1. FC Union Berlin,77,77,80,76
+361,T. Monconduit,Thomas Monconduit,28,Amiens SC,76,77,75,77
+362,Gelson Fernandes,Gélson da Conceição Tavares Fernandes,32,Eintracht Frankfurt,77,77,77,80
+363,Paulo Oliveira,Paulo André Rodrigues Oliveira,27,SD Eibar,76,77,76,75
+364,A. Duncan,Joseph Alfred Duncan,26,Sassuolo,75,77,76,76
+365,T. Rincón,Tomás Eduardo Rincón Hernández,31,Torino,77,77,76,80
+366,J. Kucka,Juraj Kucka,32,Parma,77,77,77,88
+367,A. Dragović,Aleksandar Dragović,28,Bayer 04 Leverkusen,77,77,77,75
+368,Iván Ramis,Iván Ramis Barrios,34,SD Eibar,77,77,77,81
+369,T. Kolodziejczak,Timothée Kolodziejczak,27,Tigres U.A.N.L.,76,77,76,79
+370,M. Suchý,Marek Suchý,31,FC Augsburg,77,77,76,78
+371,Marçal,Fernando Marçal de Oliveira,30,Olympique Lyonnais,77,77,76,75
+372,Arbilla,Anaitz Arbilla Zabala,32,SD Eibar,77,77,75,76
+373,M. Schneiderlin,Morgan Schneiderlin,29,Everton,77,77,75,76
+374,P. Aguilar,Pablo Aguilar,32,Cruz Azul,77,77,77,78
+375,Vieirundinho,Danilo Manuel Vieira Espíndola,31,Santos,77,77,78,83
+376,P. Jansson,Pontus Jansson,28,Brentford,76,77,76,79
+377,J. Palomino,José Luis Palomino,29,Atalanta,77,77,78,80
+378,M. Jørgensen,Mathias Jørgensen,29,Fenerbahçe SK,76,77,75,80
+379,D. Chygrynskyi,Dmytro Chygrynskyi,32,AEK Athens,76,76,76,75
+380,T. Kádár,Tamás Kádár,29,Dynamo Kyiv,75,76,76,79
+381,S. Kryvtsov,Sergiy Kryvtsov,28,Shakhtar Donetsk,75,76,75,79
+382,K. Papadopoulos,Kyriakos Papadopoulos,27,Hamburger SV,76,76,76,78
+383,M. Fellaini,Marouane Fellaini-Bakkioui,31,Shandong Luneng TaiShan FC,76,76,76,88
+384,S. Bocchetti,Salvatore Bocchetti,32,Hellas Verona,76,76,76,79
+385,D. Dessoleil,Dorian Dessoleil,26,Sporting de Charleroi,74,76,75,76
+386,S. Dewaest,Sébastien Dewaest,28,KRC Genk,75,76,75,81
+387,Mexer,Edson André Sitoe,30,FC Girondins de Bordeaux,76,76,75,77
+388,Juli Freitinho,Julio Leonardo Dourado de Freitas,31,Bahia,76,76,75,79
+389,Rafael Cachoira,Rafael Jorgino Cachoira Rebelo,31,Fortaleza,76,76,77,76
+390,J. Cork,Jack Cork,30,Burnley,76,76,76,80
+391,Juan Jesus,Juan Guilherme Nunes Jesus,28,Roma,76,76,76,78
+392,N. Viergever,Nick Viergever,29,PSV,76,76,75,77
+393,Davi Parrela,Davi Alexandre Parrela Ferreira,31,Avaí FC,76,76,76,78
+394,Kiko Olivas,Francisco José Olivas Alba,30,Real Valladolid CF,76,76,76,78
+395,O. Duarte,Óscar Duarte,30,Levante UD,76,76,77,75
+396,C. Kouyaté,Cheikhou Kouyaté,29,Crystal Palace,76,76,76,85
+397,M. Lang,Michael Lang,28,Borussia Mönchengladbach,76,76,76,78
+398,S. Mitrović,Stefan Mitrović,29,RC Strasbourg Alsace,75,76,77,77
+399,Eltildo Correia,Eltildo Lucas Correia Pitta,27,Atlético Mineiro,76,76,76,79
+400,Y. Abdelhamid,Yunis Abdelhamid,31,Stade de Reims,76,76,76,78
+401,M. van der Hoorn,Mike van der Hoorn,26,Swansea City,73,76,75,77
+402,M. Schmelzer,Marcel Schmelzer,31,Borussia Dortmund,76,76,76,76
+403,C. Schindler,Christopher Schindler,29,Huddersfield Town,76,76,77,75
+404,A. Hegazi,Ahmed Hegazi,28,West Bromwich Albion,75,76,75,80
+405,J. Maidana,Jonathan Ramón Maidana,33,Deportivo Toluca,76,76,75,80
+406,S. Bamba,Souleymane Bamba,34,Cardiff City,76,76,76,79
+407,D. Amartey,Daniel Amartey,24,Leicester City,73,76,75,76
+408,A. Hutchinson,Atiba Hutchinson,36,Beşiktaş JK,76,76,75,75
+409,V. Vasin,Viktor Vasin,30,PFC CSKA Moscow,75,75,75,78
+410,Eric Botteghin,Eric Fernando Botteghin,31,Feyenoord,75,75,75,82
+411,M. Gonalons,Maxime Gonalons,30,Roma,75,75,75,75
+412,João Aurélio,João Miguel Coimbra Aurélio,30,Moreirense FC,75,75,75,75
+413,Zainadine,Zainadine Chavango Júnior,31,Clube Sport Marítimo,75,75,75,76
+414,A. Ioniță,Artur Ioniță,28,Cagliari,75,75,75,78
+415,H. Behrens,Hanno Behrens,29,1. FC Nürnberg,75,75,75,81
+416,B. Bianchi,Bruno Bianchi,30,Atlético Tucumán,75,75,76,75
+417,H. Nordtveit,Håvard Nordtveit,29,TSG 1899 Hoffenheim,75,75,75,75
+418,T. Chandler,Timothy Chandler,29,Eintracht Frankfurt,75,75,75,79
+419,L. De Silvestri,Lorenzo De Silvestri,31,Torino,75,75,76,75
+420,Postigo,Sergio Postigo Redondo,30,Levante UD,75,75,76,76
+421,S. Bell,Stefan Bell,27,1. FSV Mainz 05,74,75,76,75
+422,A. Romao,Jacques-Alaixys Romao,35,Stade de Reims,75,75,75,79
+423,C. Dawson,Craig Dawson,29,Watford,75,75,75,77
+424,D. Le Tallec,Damien Vincent Denis Le Tallec,29,Montpellier HSC,75,75,76,75
+425,Manuel da Costa,Manuel Marouan da Costa Trinidade,33,Al Ittihad,75,75,75,80
+426,D. Congré,Daniel Congré,34,Montpellier HSC,75,75,76,75
+427,J. Hogg,Jonathan Hogg,30,Huddersfield Town,75,75,75,79
+428,A. Epureanu,Alexandru Epureanu,32,Medipol Başakşehir FK,75,75,77,75

@@ -1,0 +1,329 @@
+overall team performance 11, 32:37 = sum( the same team player's overall performance(6 dimensions))/num(same team player) DONE  Chelsea > Manchester City > Manchester United > Liverpool
+
+overall team potential 12 = sum(the sae team player's overall performance(6 dimensions))/num(same team player) DONE  Manchester City > Liverpool > Manchester United > Chelsea
+
+value for money = theta * international reputation * overall player performance / value euro 
+
+attacking parameter = cofficient * each attacking skills 
+
+defending parameter = cofficient * each attakcing skills 
+
+
+# radar chart:
+
+multi-dimensional team performance code:
+devtools::install_github("ricardo-bion/ggradar", dependencies = TRUE, force = TRUE)
+library(ggplot2)
+library(ggradar)
+
+player <- read.csv(file = "players_20.csv", header = TRUE)
+liverpoolplayer <- subset(player, club == "Liverpool")
+liverpoolplayerperformance <- liverpoolplayer[,32:37]
+manchestercityplayer <- subset(player, club == "Manchester City")
+manchestercityplayerperformance <- manchestercityplayer[,32:37]
+chelseaplayer <- subset(player, club == "Chelsea")
+chelseaplayerperformance <- chelseaplayer[,32:37]
+manchesterunitedplayer <- subset(player, club =="Manchester United")
+manchesterunitedplayerperformance <- manchesterunitedplayer[,32:37]
+liverpoolperformance <- colSums(liverpoolplayerperformance,na.rm = TRUE)
+manchestercityperformance <- colSums(manchestercityplayerperformance, na.rm = TRUE)
+chelseaperformance <- colSums(chelseaplayerperformance,na.rm = TRUE)
+manchesterunitedperformance <- colSums(manchesterunitedplayerperformance, na.rm = TRUE)
+liverpoolperformance <- liverpoolperformance * 4 / 33 - 180
+manchestercityperformance <- manchestercityperformance * 4 / 33 - 180
+chelseaperformance <- chelseaperformance * 4 / 33 - 180
+manchesterunitedperformance <- manchesterunitedperformance * 4 / 33 - 180
+teamperformance <- as.matrix(cbind(manchestercityperformance, chelseaperformance, manchesterunitedperformance, liverpoolperformance))
+teamperformance <- t(teamperformance)
+rownames(teamperformance) <- c("Manchester City", "Chelsea", "Manchester United", "Liverpool")
+teamperformance <- teamperformance / 100
+teamperformance_data_frame <- data.frame(club = c("Manchester City", "Chelsea", "Manchester United", "Liverpool"), teamperformance)
+ggradar(teamperformance_data_frame)
+
+# overall team performance code:
+
+library(ggplot2)
+
+player <- read.csv(file = "players_20.csv", header = TRUE)
+liverpoolplayer <- subset(player, club == "Liverpool")
+manchestercityplayer <- subset(player, club == "Manchester City")
+chelseaplayer <- subset(player, club == "Chelsea")
+manchesterunitedplayer <- subset(player, club =="Manchester United")
+liverpoolplayeroverall <- liverpoolplayer[,11]
+manchestercityplayeroverall <- manchestercityplayer[,11]
+chelseaplayeroverall <- chelseaplayer[,11]
+manchesterunitedplayeroverall <- manchesterunitedplayer[,11]
+liverpooloverall <- sum(liverpoolplayeroverall, na.rm = TRUE)
+manchestercityoverall <- sum(manchestercityplayeroverall, na.rm = TRUE)
+chelseaoverall <- sum(chelseaplayeroverall, na.rm = TRUE)
+manchesterunitedoverall <- sum(manchesterunitedplayeroverall, na.rm = TRUE)
+teamoverall <- data.frame(manchestercityoverall, chelseaoverall, manchesterunitedoverall, liverpooloverall)
+rownames(teamoverall) <- "Teamoverall Performance"
+colnames(teamoverall) <- LETTERS[1:4]
+teamoverall <- t(teamoverall)
+teamoverall <- cbind(c("Manchester City", "Chelsea", "Manchester United", "Liverpool"), teamoverall)
+colnames(teamoverall) <- c("Team", "Team Overall Performance")
+teamoverall <- data.frame(teamoverall)
+ggplot(teamoverall, aes(x = Team, y = Team.Overall.Performance, fill = Team)) + geom_bar(stat = "identity")
+
+
+# overall team potential code:
+
+library(ggplot2)
+
+player <- read.csv(file = "players_20.csv", header = TRUE)
+liverpoolplayer <- subset(player, club == "Liverpool")
+manchestercityplayer <- subset(player, club == "Manchester City")
+chelseaplayer <- subset(player, club == "Chelsea")
+manchesterunitedplayer <- subset(player, club =="Manchester United")
+liverpoolplayerpotential <- liverpoolplayer[,12]
+manchestercityplayerpotential <- manchestercityplayer[,12]
+chelseaplayerpotential <- chelseaplayer[,12]
+manchesterunitedplayerpotential <- manchesterunitedplayer[,12]
+liverpooloverallp <- sum(liverpoolplayerpotential, na.rm = TRUE)
+manchestercityoverallp <- sum(manchestercityplayerpotential, na.rm = TRUE)
+chelseaoverallp <- sum(chelseaplayerpotential, na.rm = TRUE)
+manchesterunitedoverallp <- sum(manchesterunitedplayerpotential, na.rm = TRUE)
+teamoverallp <- data.frame(manchestercityoverallp, chelseaoverallp, manchesterunitedoverallp, liverpooloverallp)
+rownames(teamoverallp) <- "Teamoverall Potential"
+colnames(teamoverallp) <- LETTERS[1:4]
+teamoverallp <- t(teamoverallp)
+teamoverallp <- cbind(c("Manchester City", "Chelsea", "Manchester United", "Liverpool"), teamoverallp)
+colnames(teamoverallp) <- c("Team", "Team Overall Potential")
+teamoverallp <- data.frame(teamoverallp)
+ggplot(teamoverallp, aes(x = Team, y = Team.Overall.Potential, fill = Team)) + geom_bar(stat = "identity")
+
+# historical win-lose data (take season18-19.csv as an example):
+
+library(tidyverse)
+
+demo <- read.csv(file = "season-1819.csv", header = TRUE)
+liverpoolhomewin <- demo[,c(2,3,4,7)] %>% filter(HomeTeam == "Liverpool", FTR == "H")
+liverpoolhomedraw <- demo[,c(2,3,4,7)] %>% filter(HomeTeam == "Liverpool", FTR == "D")
+liverpoolhomelose <- demo[,c(2,3,4,7)] %>% filter(HomeTeam == "Liverpool", FTR == "A")    #(N/A because Liverpool has never losed in Anfeild Stadium in season18-19)
+manchestercityhomewin <- demo[,c(2,3,4,7)] %>% filter(HomeTeam == "Man City", FTR == "H")
+manchestercityhomedraw <- demo[,c(2,3,4,7)] %>% filter(HomeTeam == "Man City", FTR == "D")
+manchestercityhomelose <- demo[,c(2,3,4,7)] %>% filter(HomeTeam == "Man City", FTR == "A")
+chelseahomewin <- demo[,c(2,3,4,7)] %>% filter(HomeTeam == "Chelsea", FTR == "H")
+chelseahomedraw <- demo[,c(2,3,4,7)] %>% filter(HomeTeam == "Chelsea", FTR == "D")
+chelseahomelose <- demo[,c(2,3,4,7)] %>% filter(HomeTeam == "Chelsea", FTR == "A")
+manchesterunitedhomewin <- demo[,c(2,3,4,7)] %>% filter(HomeTeam == "Man United", FTR == "H")
+manchesterunitedhomedraw <- demo[,c(2,3,4,7)] %>% filter(HomeTeam == "Man United", FTR == "D")
+manchesterunitedhomelose <- demo[,c(2,3,4,7)] %>% filter(HomeTeam == "Man United", FTR == "A")
+
+liverpoolhomewincount = nrow(liverpoolhomewin)
+manchestercityhomewincount = nrow(manchestercityhomewin)
+chelseahomewincount = nrow(chelseahomewin)
+manchesterunitedhomewincount = nrow(manchesterunitedhomewin)
+
+liverpoolhomewincount = nrow(liverpoolhomewin)
+manchestercityhomewincount = nrow(manchestercityhomewin)
+chelseahomewincount = nrow(chelseahomewin)
+manchesterunitedhomewincount = nrow(manchesterunitedhomewin)
+teamhomewin_vector <- c(liverpoolhomewincount, manchestercityhomewincount, chelseahomewincount, manchesterunitedhomewincount)
+teamhomewin_df <- data.frame(team = c("Liverpool", "Manchester City", "Chelsea", "Manchester United"), Home_Win = teamhomewin_vector)
+ggplot(teamhomewin_df, aes(x = team, y = Home_Win, fill = team)) + geom_bar(stat = "identity") + geom_text(aes(label = paste(Home_Win)))
+
+
+liverpoolhomedrawcount = nrow(liverpoolhomedraw)
+manchestercityhomedrawcount = nrow(manchestercityhomedraw)
+chelseahomedrawcount = nrow(chelseahomedraw)
+manchesterunitedhomedrawcount = nrow(manchesterunitedhomedraw)
+teamhomedraw_vector <- c(liverpoolhomedrawcount, manchestercityhomedrawcount, chelseahomedrawcount, manchesterunitedhomedrawcount)
+teamhomedraw_df <- data.frame(team = c("Liverpool", "Manchester City", "Chelsea", "Manchester United"), Home_Draw = teamhomedraw_vector)
+ggplot(teamhomedraw_df, aes(x = team, y = Home_Draw, fill = team)) + geom_bar(stat = "identity") + geom_text(aes(label = paste(Home_Draw)))
+
+liverpoolhomelosecount = nrow(liverpoolhomelose)
+manchestercityhomelosecount = nrow(manchestercityhomelose)
+chelseahomelosecount = nrow(chelseahomelose)
+manchesterunitedhomelosecount = nrow(manchesterunitedhomelose)
+teamhomelose_vector <- c(liverpoolhomelosecount, manchestercityhomelosecount, chelseahomelosecount, manchesterunitedhomelosecount)
+teamhomelose_df <- data.frame(team = c("Liverpool", "Manchester City", "Chelsea", "Manchester United"), Home_Lose = teamhomelose_vector)
+ggplot(teamhomelose_df, aes(x = team, y = Home_Lose, fill = team)) + geom_bar(stat = "identity") + geom_text(aes(label = paste(Home_Lose)))
+
+demo <- read.csv(file = "season-1819.csv", header = TRUE)
+liverpoolawaywin <- demo[,c(2,3,4,7)] %>% filter(AwayTeam == "Liverpool", FTR == "H")
+liverpoolawaydraw <- demo[,c(2,3,4,7)] %>% filter(AwayTeam == "Liverpool", FTR == "D")
+liverpoolawaylose <- demo[,c(2,3,4,7)] %>% filter(AwayTeam == "Liverpool", FTR == "A")    
+manchestercityawaywin <- demo[,c(2,3,4,7)] %>% filter(AwayTeam == "Man City", FTR == "H")
+manchestercityawaydraw <- demo[,c(2,3,4,7)] %>% filter(AwayTeam == "Man City", FTR == "D")
+manchestercityawaylose <- demo[,c(2,3,4,7)] %>% filter(AwayTeam == "Man City", FTR == "A")
+chelseaawaywin <- demo[,c(2,3,4,7)] %>% filter(AwayTeam == "Chelsea", FTR == "H")
+chelseaawaydraw <- demo[,c(2,3,4,7)] %>% filter(AwayTeam == "Chelsea", FTR == "D")
+chelseaawaylose <- demo[,c(2,3,4,7)] %>% filter(AwayTeam == "Chelsea", FTR == "A")
+manchesterunitedawaywin <- demo[,c(2,3,4,7)] %>% filter(AwayTeam == "Man United", FTR == "H")
+manchesterunitedawaydraw <- demo[,c(2,3,4,7)] %>% filter(AwayTeam == "Man United", FTR == "D")
+manchesterunitedawaylose <- demo[,c(2,3,4,7)] %>% filter(AwayTeam == "Man United", FTR == "A")
+
+liverpoolawaywincount = nrow(liverpoolawaywin)
+manchestercityawaywincount = nrow(manchestercityawaywin)
+chelseaawaywincount = nrow(chelseaawaywin)
+manchesterunitedawaywincount = nrow(manchesterunitedawaywin)
+teamawaywin_vector <- c(liverpoolawaywincount, manchestercityawaywincount, chelseaawaywincount, manchesterunitedawaywincount)
+teamawaywin_df <- data.frame(team = c("Liverpool", "Manchester City", "Chelsea", "Manchester United"), Away_Win = teamawaywin_vector)
+ggplot(teamawaywin_df, aes(x = team, y = Away_Win, fill = team)) + geom_bar(stat = "identity") + geom_text(aes(label = paste(Away_Win)))
+
+
+liverpoolawaydrawcount = nrow(liverpoolawaydraw)
+manchestercityawaydrawcount = nrow(manchestercityawaydraw)
+chelseaawaydrawcount = nrow(chelseaawaydraw)
+manchesterunitedawaydrawcount = nrow(manchesterunitedawaydraw)
+teamawaydraw_vector <- c(liverpoolawaydrawcount, manchestercityawaydrawcount, chelseaawaydrawcount, manchesterunitedawaydrawcount)
+teamawaydraw_df <- data.frame(team = c("Liverpool", "Manchester City", "Chelsea", "Manchester United"), Away_Draw = teamawaydraw_vector)
+ggplot(teamawaydraw_df, aes(x = team, y = Away_Draw, fill = team)) + geom_bar(stat = "identity") + geom_text(aes(label = paste(Away_Draw)))
+
+liverpoolawaylosecount = nrow(liverpoolawaylose)
+manchestercityawaylosecount = nrow(manchestercityawaylose)
+chelseaawaylosecount = nrow(chelseaawaylose)
+manchesterunitedawaylosecount = nrow(manchesterunitedawaylose)
+teamawaylose_vector <- c(liverpoolawaylosecount, manchestercityawaylosecount, chelseaawaylosecount, manchesterunitedawaylosecount)
+teamawaylose_df <- data.frame(team = c("Liverpool", "Manchester City", "Chelsea", "Manchester United"), Away_Lose = teamawaylose_vector)
+ggplot(teamawaylose_df, aes(x = team, y = Away_Lose, fill = team)) + geom_bar(stat = "identity") + geom_text(aes(label = paste(Away_Lose)))
+
+teamhistoryhome <- data.frame(team = c("Liverpool", "Manchester City", "Chelsea", "Manchester United"), Home_Win = teamhomewin_vector, Home_Draw = teamhomedraw_vector, Home_Lose = teamhomelose_vector)
+teamhistoryaway <- data.frame(team = c("Liverpool", "Manchester City", "Chelsea", "Manchester United"), Away_Win = teamawaywin_vector, Away_Draw = teamawaydraw_vector, Away_Lose = teamawaylose_vector)
+teamhistory <- data.frame(team = c("Liverpool", "Manchester City", "Chelsea", "Manchester United"), Win = rowSums(teamhomewin_vector, teamawaywin_vector), Draw = rowSums(teamhomedraw_vector, teamawaydraw_vector), Lose = rowSums(teamhomelose_vector, teamawaylose_vector))
+
+
+# Value_for_Money overall
+demo <- read.csv(file = "players_20.csv", header = TRUE)
+demo <- read.csv(file = "players_20.csv", header = TRUE)
+playeravailable <- subset(demo, contract_valid_until <= 2025)
+playeravailable <- filter(playeravailable, defending >= 75, physic >= 75) %>% subset(potential >= 75)
+playerwanted <- arrange(playeravailable, desc(value_eur*1.2*international_reputation/wage_eur))
+playerwantedbrief <- playerwanted[, c(3,4,5,10,11,12,36,37)]
+playerwantedbrief <- arrange(playerwantedbrief, desc(potential))
+playerwantedbrief
+
+# prediction of next two years: (Poisson Model)
+
+library(tidyverse)
+
+demo <- read.csv(file = "season-1819.csv", header = TRUE)
+liverpoolhomewin <- demo[,c(2,3,4,7)] %>% filter(HomeTeam == "Liverpool", FTR == "H")
+liverpoolhomedraw <- demo[,c(2,3,4,7)] %>% filter(HomeTeam == "Liverpool", FTR == "D")
+liverpoolhomelose <- demo[,c(2,3,4,7)] %>% filter(HomeTeam == "Liverpool", FTR == "A")
+manchestercityhomewin <- demo[,c(2,3,4,7)] %>% filter(HomeTeam == "Man City", FTR == "H")
+manchestercityhomedraw <- demo[,c(2,3,4,7)] %>% filter(HomeTeam == "Man City", FTR == "D")
+manchestercityhomelose <- demo[,c(2,3,4,7)] %>% filter(HomeTeam == "Man City", FTR == "A")
+chelseahomewin <- demo[,c(2,3,4,7)] %>% filter(HomeTeam == "Chelsea", FTR == "H")
+chelseahomedraw <- demo[,c(2,3,4,7)] %>% filter(HomeTeam == "Chelsea", FTR == "D")
+chelseahomelose <- demo[,c(2,3,4,7)] %>% filter(HomeTeam == "Chelsea", FTR == "A")
+manchesterunitedhomewin <- demo[,c(2,3,4,7)] %>% filter(HomeTeam == "Man United", FTR == "H")
+manchesterunitedhomedraw <- demo[,c(2,3,4,7)] %>% filter(HomeTeam == "Man United", FTR == "D")
+manchesterunitedhomelose <- demo[,c(2,3,4,7)] %>% filter(HomeTeam == "Man United", FTR == "A")
+
+liverpoolawaywin <- demo[,c(2,3,4,7)] %>% filter(AwayTeam == "Liverpool", FTR == "A")
+liverpoolawaydraw <- demo[,c(2,3,4,7)] %>% filter(AwayTeam == "Liverpool", FTR == "D")
+liverpoolawaylose <- demo[,c(2,3,4,7)] %>% filter(AwayTeam == "Liverpool", FTR == "H")    
+manchestercityawaywin <- demo[,c(2,3,4,7)] %>% filter(AwayTeam == "Man City", FTR == "A")
+manchestercityawaydraw <- demo[,c(2,3,4,7)] %>% filter(AwayTeam == "Man City", FTR == "D")
+manchestercityawaylose <- demo[,c(2,3,4,7)] %>% filter(AwayTeam == "Man City", FTR == "H")
+chelseaawaywin <- demo[,c(2,3,4,7)] %>% filter(AwayTeam == "Chelsea", FTR == "A")
+chelseaawaydraw <- demo[,c(2,3,4,7)] %>% filter(AwayTeam == "Chelsea", FTR == "D")
+chelseaawaylose <- demo[,c(2,3,4,7)] %>% filter(AwayTeam == "Chelsea", FTR == "H")
+manchesterunitedawaywin <- demo[,c(2,3,4,7)] %>% filter(AwayTeam == "Man United", FTR == "A")
+manchesterunitedawaydraw <- demo[,c(2,3,4,7)] %>% filter(AwayTeam == "Man United", FTR == "D")
+manchesterunitedawaylose <- demo[,c(2,3,4,7)] %>% filter(AwayTeam == "Man United", FTR == "H")
+
+liverpoolhomewincount = nrow(liverpoolhomewin)
+manchestercityhomewincount = nrow(manchestercityhomewin)
+chelseahomewincount = nrow(chelseahomewin)
+manchesterunitedhomewincount = nrow(manchesterunitedhomewin)
+liverpoolawaywincount = nrow(liverpoolawaywin)
+manchestercityawaywincount = nrow(manchestercityawaywin)
+chelseaawaywincount = nrow(chelseaawaywin)
+manchesterunitedawaywincount = nrow(manchesterunitedawaywin)
+
+liverpoolhomedrawcount = nrow(liverpoolhomedraw)
+manchestercityhomedrawcount = nrow(manchestercityhomedraw)
+chelseahomedrawcount = nrow(chelseahomedraw)
+manchesterunitedhomedrawcount = nrow(manchesterunitedhomedraw)
+liverpoolawaydrawcount = nrow(liverpoolawaydraw)
+manchestercityawaydrawcount = nrow(manchestercityawaydraw)
+chelseaawaydrawcount = nrow(chelseaawaydraw)
+manchesterunitedawaydrawcount = nrow(manchesterunitedawaydraw)
+
+liverpoolhomelosecount = nrow(liverpoolhomelose)
+manchestercityhomelosecount = nrow(manchestercityhomelose)
+chelseahomelosecount = nrow(chelseahomelose)
+manchesterunitedhomelosecount = nrow(manchesterunitedhomelose)
+liverpoolawaylosecount = nrow(liverpoolawaylose)
+manchestercityawaylosecount = nrow(manchestercityawaylose)
+chelseaawaylosecount = nrow(chelseaawaylose)
+manchesterunitedawaylosecount = nrow(manchesterunitedawaylose)
+
+liverpooltotalwincount <- liverpoolhomewincount + liverpoolawaywincount
+manchestercitytotalwincount <- manchestercityhomewincount + manchestercityawaywincount
+chelseatotalwincount <- chelseahomewincount + chelseaawaywincount
+manchesterunitedtotalwincount <- manchesterunitedhomewincount + manchesterunitedawaywincount
+
+liverpooltotaldrawcount <- liverpoolhomedrawcount + liverpoolawaydrawcount
+manchestercitytotaldrawcount <- manchestercityhomedrawcount + manchestercityawaydrawcount
+chelseatotaldrawcount <- chelseahomedrawcount + chelseaawaydrawcount
+manchesterunitedtotaldrawcount <- manchesterunitedhomedrawcount + manchesterunitedawaydrawcount
+
+liverpooltotallosecount <- liverpoolhomelosecount + liverpoolawaylosecount
+manchestercitytotallosecount <- manchestercityhomelosecount + manchestercityawaylosecount
+chelseatotallosecount <- chelseahomelosecount + chelseaawaylosecount
+manchesterunitedtotallosecount <- manchesterunitedhomelosecount + manchesterunitedawaylosecount
+
+liverpoolgamecount <- liverpooltotalwincount + liverpooltotaldrawcount + liverpooltotallosecount
+manchestercitygamecount <- manchestercitytotalwincount + manchestercitytotaldrawcount + manchestercitytotallosecount
+chelseagamecount <- chelseatotalwincount + chelseatotaldrawcount + chelseatotallosecount
+manchesterunitedgamecount <- manchesterunitedtotalwincount + manchesterunitedtotaldrawcount + manchesterunitedtotallosecount
+
+premierleaguehomewincount <- subset(demo, FTR == "H")
+premierleagueawaywincount <- subset(demo, FTR == "A")
+premierleaguetotalwincount <- nrow(premierleaguehomewincount)
+premierleaguetotallosecount <- nrow(premierleagueawaywincount)
+premierleaguegamecount <- nrow(demo)
+
+liverpoolattackparameter <- (liverpooltotalwincount / liverpoolgamecount) / (premierleaguetotalwincount / premierleaguegamecount)
+manchestercityattackparameter <- (manchestercitytotalwincount / manchestercitygamecount) / (premierleaguetotalwincount / premierleaguegamecount)
+chelseaattackparameter <- (chelseatotalwincount / chelseagamecount) / (premierleaguetotalwincount / premierleaguegamecount)
+manchesterunitedattackparameter <- (manchesterunitedtotalwincount / manchesterunitedgamecount) / (premierleaguetotalwincount / premierleaguegamecount)
+
+liverpooldefendparameter <- (liverpooltotallosecount / liverpoolgamecount) / (premierleaguetotallosecount / premierleaguegamecount)
+manchestercitydefendparameter <- (manchestercitytotallosecount / manchestercitygamecount) / (premierleaguetotallosecount / premierleaguegamecount)
+chelseadefendparameter <- (chelseatotallosecount / chelseagamecount) / (premierleaguetotallosecount / premierleaguegamecount)
+manchesteruniteddefendparameter <- (manchesterunitedtotallosecount / manchesterunitedgamecount) / (premierleaguetotallosecount / premierleaguegamecount)
+
+premierleagueaveragewin <- premierleaguetotalwincount / premierleaguegamecount
+premierleagueaveragelose <- premierleaguetotallosecount / premierleaguegamecount
+
+player <- read.csv(file = "players_20.csv", header = TRUE)
+liverpoolplayer <- subset(player, club == "Liverpool")
+manchestercityplayer <- subset(player, club == "Manchester City")
+chelseaplayer <- subset(player, club == "Chelsea")
+manchesterunitedplayer <- subset(player, club =="Manchester United")
+liverpoolplayeroverall <- liverpoolplayer[,11]
+manchestercityplayeroverall <- manchestercityplayer[,11]
+chelseaplayeroverall <- chelseaplayer[,11]
+manchesterunitedplayeroverall <- manchesterunitedplayer[,11]
+liverpooloverall <- sum(liverpoolplayeroverall, na.rm = TRUE)
+manchestercityoverall <- sum(manchestercityplayeroverall, na.rm = TRUE)
+chelseaoverall <- sum(chelseaplayeroverall, na.rm = TRUE)
+manchesterunitedoverall <- sum(manchesterunitedplayeroverall, na.rm = TRUE)
+
+player <- read.csv(file = "players_20.csv", header = TRUE)
+liverpoolplayer <- subset(player, club == "Liverpool")
+manchestercityplayer <- subset(player, club == "Manchester City")
+chelseaplayer <- subset(player, club == "Chelsea")
+manchesterunitedplayer <- subset(player, club =="Manchester United")
+liverpoolplayerpotential <- liverpoolplayer[,12]
+manchestercityplayerpotential <- manchestercityplayer[,12]
+chelseaplayerpotential <- chelseaplayer[,12]
+manchesterunitedplayerpotential <- manchesterunitedplayer[,12]
+liverpooloverallp <- sum(liverpoolplayerpotential, na.rm = TRUE)
+manchestercityoverallp <- sum(manchestercityplayerpotential, na.rm = TRUE)
+chelseaoverallp <- sum(chelseaplayerpotential, na.rm = TRUE)
+manchesterunitedoverallp <- sum(manchesterunitedplayerpotential, na.rm = TRUE)
+
+liverpoolfactor <- liverpooloverallp / liverpooloverall
+liverpoolwinprediction <- liverpoolattackparameter * liverpoolfactor * premierleagueaveragewin
+liverpoolwinprediction
+liverpoolloseprediction <- liverpooldefendparameter * liverpoolfactor * premierleagueaveragelose
+liverpoolloseprediction
+liverpooldrawprediction <- 1 - (liverpoolwinprediction + liverpoolloseprediction)
+liverpooldrawprediction
