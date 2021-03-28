@@ -1,0 +1,283 @@
+---
+title: "9750 project"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+Data Analysis of Amazon Cellphone review
+
+Our hypothesis is on things customer concerned the most when they purchase the cell phone are camera, battery, and appearance. To test our hypothesis, we looked for the most repeated keywords within the Amazon cellphone customer reviews.
+
+1. library prep:
+Before we can get started, we need to get our enviornment set up. Let's load in the packages we're going to use. There are comments described why we need each package.
+
+```{r}
+library(tidyverse) # general utility & workflow functions
+library(tidytext) # tidy implimentation of NLP methods
+library(topicmodels) # for LDA topic modelling 
+library(tm) # general text mining functions, making document term matrixes
+library(SnowballC) # for stemming
+```
+
+2. import csv.file:
+We retrieve our datasets from https://www.kaggle.com/grikomsn/amazon-cell-phones-reviews. (Use 2019/12/26 Version)
+
+The reviews dataset contains 67,986 reviews from Amazon for 716 different models of cellphones. In the items dataset, there are 10 variables namely “asin”, “brand”, “title”, “url”, “image”, “rating”, “reviewUrl”, “total reviews”, “price”, and “original price”.
+
+In the reviews dataset, there are 8 variable namely “asin”, “name”, “rating”, “date”, “verified”, “title”, “body” and “helpful votes”.
+
+Each review can be associated with an item using unique asin with a rating ranging from 1 to 5.
+
+```{r}
+items <- read.csv(file = file.choose(), header = TRUE)
+reviews <- read.csv(file = file.choose(), header = TRUE)
+head(items, n=3)
+head(reviews, n=3)
+```
+
+3. pre-processing raw data:
+```{r}
+# Based on original url link, we have the phone class below:
+items <- items %>% mutate(class = case_when(originalPrice == 0 & price == 0 ~ "used",
+                                            originalPrice != 0 & price != 0 ~ "promotion",
+                                            originalPrice == 0 & price != 0 ~ "new"))
+
+reviews$helpfulVotes <- reviews$helpfulVotes %>% replace_na(0) #replace na to 0
+
+reviews <- na.omit(reviews)
+
+head(items, n=3)
+head(reviews, n=3)
+```
+
+4. brief statistical analysis
+
+4.1 the number of brands of cellphones:
+```{r}
+items %>% distinct(asin) %>% nrow()
+```
+
+4.2 the number of different classes of cellphones:
+```{r}
+items$class %>% factor() %>% summary()
+```
+
+4.3 the number of people involved:
+```{r}
+reviews$name %>% unique() %>% length()
+```
+
+5. NLP Top Topic Analysis - Unsupervised topic modeling with LDA
+
+5.1 pretest by using LDA model without 2nd pre-processing data: 
+
+LDA is an unsupervised learning method that maximizes the probability of word assignments to one of K fixed topics. The topic meaning is extracted by interpreting the top N probability words for a given topic.
+
+```{r}
+# Function that takes a text column from a data frame and returns a plot of the most informative words for a given number of topics
+top_terms_by_topic_LDA <- function(input_text, plot = TRUE, number_of_topics = 4){
+  corpus <- Corpus(VectorSource(input_text))
+  DTM <- DocumentTermMatrix(corpus)
+  
+  unique_indexes <- unique(DTM$i)
+  DTM <- DTM[unique_indexes, ]
+  
+  lda <- LDA(DTM, k = number_of_topics, control = list(seed = 1234))
+  topics <- tidy(lda, matrix = "beta")
+  
+# get the top ten terms for each topic
+  top_terms <- topics %>% 
+    filter(term != "phone.,") %>%
+    group_by(topic) %>%
+    top_n(10, beta) %>%
+    ungroup() %>%
+    arrange(topic, desc(beta))
+  
+  if(plot == TRUE){
+    top_terms %>% 
+      mutate(term = reorder(term, beta)) %>%  
+      ggplot(aes(term, beta, fill = factor(topic))) + 
+      geom_col(show.legend = FALSE) + 
+      facet_wrap(~ topic, scales = "free") + 
+      labs(x = NULL, y = "Beta") + 
+      coord_flip() 
+  }else{ 
+    return(top_terms)
+  }
+}
+
+# plot top ten terms in the cellphone reviews by topic
+top_terms_by_topic_LDA(reviews$body, number_of_topics = 2) + 
+  ggtitle("Top 10 keywords by using LDA Model with 2 Topics (including stopwords)") + 
+  theme(plot.title = element_text(hjust = 0.5))
+```
+
+Beta represents topic - word density - with a high beta, topics are made up of most of the words in the corpus, and with a low beta they consist of few words.
+
+In customer reviews, there are many commonly used words that play important roles in grammar, but do not actually convey much information such as “the”, “and”, “was”, “this”, “not”, “for”, “with” and “but” in the above chart. 
+
+Our topic modelling will be a lot more useful if we remove these words. So the next step we will remove the stopwords and remodel the data. So we need to do further work to get more useful and informative results.
+
+5.2 2nd pre-processing data for NLP LDA model:
+
+```{r}
+usable_reviews <- str_replace_all(reviews$body,"[^[:graph:]]", " ") 
+
+# Because we need to remove non-graphical characters to use tolower()
+# Pre-processing our text data to remove stopwords
+
+reviewsCorpus <- Corpus(VectorSource(usable_reviews))
+reviewsDTM <- DocumentTermMatrix(reviewsCorpus)
+
+reviewsDTM_tidy <- tidy(reviewsDTM)
+
+ntlk_stop_words <- tibble(word = c("i", "me", "my", "myself", "we", "our",
+                                   "ours", "ourselves", "you", "your", "yours",
+                                   "yourself", "yourselves", "he", "him", "his",
+                                   "himself", "she", "her", "hers", "herself", 
+                                   "it", "its", "itself", "they", "them", "their",
+                                   "theirs", "themselves", "what", "which", "who",
+                                   "whom", "this", "that", "these", "those", "am",
+                                   "is", "are", "was", "were", "be", "been", "being",
+                                   "have", "has", "had", "having", "do", "does", "did",
+                                   "doing", "a", "an", "the", "and", "but", "if", "or",
+                                   "because", "as", "until", "while", "of", "at", 
+                                   "by", "for", "with", "about", "against", "between",
+                                   "into", "through", "during", "before", "after", 
+                                   "above", "below", "to", "from", "up", "down", "in",
+                                   "out", "on", "off", "over", "under", "again", 
+                                   "further", "then", "once", "here", "there", "when",
+                                   "where", "why", "how", "all", "any", "both", "each", 
+                                   "few", "more", "most", "other", "some", "such", "no",
+                                   "nor", "not", "only", "own", "same", "so", "than",
+                                   "too", "very", "s", "t", "can", "will", "just", "don",
+                                   "should", "now"))
+ntlk_stop_words$word <- paste(ntlk_stop_words$word, ",", sep = "")
+ntlk_stop_words2 <- ntlk_stop_words
+ntlk_stop_words2$word <- paste(ntlk_stop_words2$word, ",", sep = "")
+ntlk_stop_words3 <- ntlk_stop_words
+ntlk_stop_words3$word <- paste(ntlk_stop_words3$word, ".", sep = "")
+ntlk_stop_words_total <- rbind(ntlk_stop_words, ntlk_stop_words2, ntlk_stop_words3)
+
+# Remove both "phone","amazon" and ect which are very common in amazon phone reviews
+custom_stop_words <- tibble(word = c("phone", "phone,", "phone.,", "===>", "amazon", "it.,"))
+
+reviewsDTM_tidy_cleaned <- reviewsDTM_tidy %>%
+  anti_join(stop_words, by = c("term" = "word")) %>%
+  anti_join(ntlk_stop_words_total, by = c("term" = "word")) %>%
+  anti_join(custom_stop_words, by = c("term" = "word"))
+
+# reconstruct our documents
+cleaned_documents <- reviewsDTM_tidy_cleaned %>%
+  group_by(document) %>% 
+  mutate(terms = toString(rep(term, count))) %>%
+  select(document, terms) %>% 
+  unique()
+
+head(cleaned_documents) # to have a quick look at cleaned_documents
+
+# Recheck the model with cleaned documents after removing the stopwords and common words in amazon phone review
+top_terms_by_topic_LDA(cleaned_documents$terms, number_of_topics = 2) + 
+  ggtitle("Top 10 keywords by using LDA Model with 2 Topics") + 
+  theme(plot.title = element_text(hjust = 0.5))
+```
+
+From the charts above we can see that the results are much more informative after we remove the stopwords and common words in amazon phone review. It looks like the first topic is more about "battery" and the second topic is more about "bought". However, in the just first ten terms, we see some repetition. Topic two contains both “buy” and “bought”. This is a little bit less informative than it could be. We can collapse all the different forms of the same word with a process called "stemming".
+
+5.3 Removing all the inflection from words for NLP LDA model:
+
+```{r}
+reviewsDTM_tidy_cleaned <- reviewsDTM_tidy_cleaned %>%
+  mutate(stem = wordStem(term))
+
+cleaned_documents <- reviewsDTM_tidy_cleaned %>%
+  group_by(document) %>% 
+  mutate(terms = toString(rep(stem, count))) %>%
+  select(document, terms) %>%
+  unique()
+
+# Recheck the model after stemming our data
+# The new most informative terms
+top_terms_by_topic_LDA(cleaned_documents$terms, number_of_topics = 2) + 
+  ggtitle("Top 10 keywords by using LDA Model with 2 Topics") + 
+  theme(plot.title = element_text(hjust = 0.5))
+```
+
+There are some words look weird, like "batteri",  "bui",  and "dai". These are the stems of the words, which in this case are generated using the Porter Stemming Algorithm.  In this instance, it looks like stemming was not actually that helpful in terms of generating informative topics. But from the right subplot of the result, we still can see that the hottest topic about cellphone in customer's review on Amazon are: screen, battery, buy, app, android(operation system), day, camera, time, call.
+
+6.Supervised topic modeling with TF-IDF:
+
+```{r}
+# Function that takes in a dataframe and the name of the columns with the document texts and the topic lables. If plot is set to false, it will retrun  the tf-idf output rather than a plot.
+top_terms_by_topic_tfidf <- function(text_df, text_column, group_column, plot = TRUE){
+  group_column <- enquo(group_column)
+  text_column <- enquo(text_column)
+
+  # Get the count of each word in each review
+  words <- text_df %>%
+    unnest_tokens(word, !!text_column) %>%
+    count(!!group_column, word) %>%
+    ungroup()
+  
+  # Get the number of words per text
+  total_words <- words %>% 
+    group_by(!!group_column) %>% 
+    summarize(total = sum(n))
+  
+  # Combine the two dataframes we just made
+  words <- left_join(words, total_words)
+  
+  # Get the tf-idf & order the words by degree of relevence
+  tf_idf <- words %>%
+    bind_tf_idf(word, !!group_column, n) %>%
+    select(-total) %>%
+    arrange(desc(tf_idf)) %>%
+    mutate(word = factor(word, levels = rev(unique(word))))
+  
+  if(plot == TRUE){
+
+    group_name <- quo_name(group_column)
+    
+    # Plot the 10 most informative terms per topic
+    tf_idf %>% 
+      group_by(!!group_column) %>% 
+      top_n(10) %>% 
+      ungroup %>%
+      ggplot(aes(word, tf_idf, fill = as.factor(group_name))) +
+      geom_col(show.legend = FALSE) +
+      labs(x = NULL, y = "tf-idf") +
+      facet_wrap(reformulate(group_name), scales = "free") +
+      coord_flip()
+  }else{
+
+    return(tf_idf)
+  }
+  
+}
+
+reviews <- as_tibble(reviews)
+reviews <- mutate(reviews, body = as.character(body)) 
+```
+
+Because tokenizer function doesn't recognize factor data type, we need to convert from factor into normal character.
+
+```{r}
+usable_reviews2 <- reviews
+
+usable_reviews2$body <- gsub("[^[:alnum:]]", " ", usable_reviews2$body)
+
+# Check out the most informative words for verified customers
+top_terms_by_topic_tfidf(text_df = usable_reviews2, 
+                         text_column = body, 
+                         group_column = verified, 
+                         plot = TRUE) + 
+  ggtitle("Top 10 keywords by using TF-IDF Model") + 
+  theme(plot.title = element_text(hjust = 0.5))  
+```
+
+Then we find a more interesting things: when verified is TRUE, we can see that the hottest topics are described by Spanish.
+
+After translation, we know that through tf-idf model, the customers are concerned about:
+
+Battery, recommendation, load, great, quick(speed), past experience (nunca = never or ever), fascination and user's gender (sus = his) 
